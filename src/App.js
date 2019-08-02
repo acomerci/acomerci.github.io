@@ -10,6 +10,7 @@ import SwipeableViews from 'react-swipeable-views';
 
 import logo from './logo.svg';
 import './App.css';
+import TitlebarGridList from './Projects';
 import Clock from './Clock.js';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Bienvenida" {...a11yProps(0)} />
           <Tab label="Hora" {...a11yProps(1)} />
+          <Tab label="Proyectos" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -46,7 +48,10 @@ function App() {
           </p>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-        <Clock />
+          <Clock />
+        </TabPanel>
+        <TabPanel value={value} index={2} dir={theme.direction}>
+          <TitlebarGridList />
         </TabPanel>
       </SwipeableViews>
       </header>
