@@ -6,9 +6,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import SwipeableViews from 'react-swipeable-views';
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 
-import logo from './logo.svg';
 import './App.css';
 import TitlebarGridList from './Projects';
 import Clock from './Clock.js';
@@ -29,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AppBar position="static">
+        <AppBar position="sticky">
         <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Bienvenida" {...a11yProps(0)} />
           <Tab label="Hora" {...a11yProps(1)} />

@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'space-around',
         overflow: 'hidden',
     },
+    titlePositionBottom: {
+        bottom: '7px',
+    },
     icon: {
         color: 'rgba(255, 255, 255, 0.54)',
     },
@@ -36,11 +39,12 @@ export default function TitlebarGridList() {
             <Grid container spacing={3}>
                 {tileData.map(tile => (
                     <Grid key={tile.img} item sm={12} md={6}>
-                        <GridListTile className={classes.li}>
+                    <GridListTile className={classes.li}>
                             <img src={tile.img} alt={tile.title} className={classes.img} />
                             <GridListTileBar
                                 title={tile.title}
-                                subtitle={<span>by: {tile.author}</span>}
+                                subtitle={<span>{tile.client}</span>}
+                                className={classes.titlePositionBottom}
                                 actionIcon={
                                     <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
                                         <InfoIcon />

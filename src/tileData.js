@@ -1,68 +1,67 @@
 const tileData = [
     {
       img: '/images/breakfast.jpg',
-      title: 'Breakfast',
-      author: 'jill111',
-      cols: 2,
+      title: 'Pagos en Sucursal',
+      client: 'BBVA',
       featured: true,
     },
     {
       img: '/images/burgers.jpg',
       title: 'Tasty burger',
-      author: 'director90',
+      client: 'director90',
     },
     {
       img: '/images/camera.jpg',
       title: 'Camera',
-      author: 'Danson67',
+      client: 'Danson67',
     },
     {
       img: '/images/morning.jpg',
       title: 'Morning',
-      author: 'fancycrave1',
+      client: 'fancycrave1',
       featured: true,
     },
     {
       img: '/images/hats.jpg',
       title: 'Hats',
-      author: 'Hans',
+      client: 'Hans',
     },
     {
       img: '/images/honey.jpg',
       title: 'Honey',
-      author: 'fancycravel',
+      client: 'fancycravel',
     },
     {
       img: '/images/vegetables.jpg',
       title: 'Vegetables',
-      author: 'jill111',
+      client: 'jill111',
       cols: 2,
     },
     {
       img: '/images/plant.jpg',
       title: 'Water plant',
-      author: 'BkrmadtyaKarki',
+      client: 'BkrmadtyaKarki',
     },
     {
       img: '/images/mushroom.jpg',
       title: 'Mushrooms',
-      author: 'PublicDomainPictures',
+      client: 'PublicDomainPictures',
     },
     {
       img: '/images/olive.jpg',
       title: 'Olive oil',
-      author: 'congerdesign',
+      client: 'congerdesign',
     },
     {
       img: '/images/star.jpg',
       title: 'Sea star',
       cols: 2,
-      author: '821292',
+      client: '821292',
     },
     {
       img: '/images/bike.jpg',
       title: 'Bike',
-      author: 'danfador',
+      client: 'danfador',
     },
   ];
   
