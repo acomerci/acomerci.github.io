@@ -42,17 +42,40 @@ export default function TitlebarGridList() {
 
     const [scroll, setScroll] = useState(0);
     const [scrollItems, setScrollItems] = useState([]);
+    const [originalOffsetHeight, setOriginalOffsetHeight] = useState([]);
 
     useEffect(() => {
-        function onScrollOrResize() {
+        function onScrollOrResize(event) {
+            if (event && event.type === 'resize') {
+                let elemScroll = [];
+                let elems = document.getElementsByName('scrollGrow');
+
+                for (var i = 0; i < elems.length; i++) {
+                    let elem = elems[i];
+                    let eScroll = elem.offsetTop - elem.scrollTop + elem.clientTop;
+                    elemScroll.push({ id: elem.id, scroll: eScroll, grow: eScroll < scroll });
+                }
+
+                setScrollItems(elemScroll);
+            }
+
             setScroll((window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0) +
                 getViewportHeight());
         }
 
-        // onScrollOrResize();
+        let elemsOriginalHeight = [];
+        let elems = document.getElementsByName('scrollGrow');
+        for (var i = 0; i < elems.length; i++) {
+            elemsOriginalHeight[i] = elems[i].offsetHeight;
+        }
+        setOriginalOffsetHeight(elemsOriginalHeight);
 
         window.addEventListener('scroll', onScrollOrResize);
         window.addEventListener('resize', onScrollOrResize);
+
+        setTimeout(() => {
+            onScrollOrResize();
+        }, 1);
 
         return () => {
             window.removeEventListener('scroll', onScrollOrResize);
@@ -61,31 +84,33 @@ export default function TitlebarGridList() {
     }, [])
 
     useEffect(() => {
-        var elemScroll = [];
-        var elems = document.getElementsByName('scrollGrow');
-        for (var i = 0; i < elems.length; i++) {
-            var elem = elems[i];
-            var scrollItem = scrollItems.find(si => si.id == elem.id);
-            var grow = scrollItem ? scrollItem.grow || (scrollItem.scroll > getViewportHeight() && scrollItem.scroll < scroll) : false;
-            if (grow)
-                console.log(scrollItem.scroll + ' ' + scroll)
-            elemScroll.push({ id: elem.id, scroll: elem.offsetTop - elem.scrollTop + elem.clientTop, grow: grow });
-        }
+        let elems = document.getElementsByName('scrollGrow');
+        
+        if (elems[0].offsetHeight === originalOffsetHeight[0]) {
+            let elemScroll = [];
 
-        setScrollItems(elemScroll);
+            for (var i = 0; i < elems.length; i++) {
+                let elem = elems[i];
+                let scrollItem = scrollItems.find(si => si.id == elem.id);
+                let grow = scrollItem ? scrollItem.grow || scrollItem.scroll < scroll : false;
+                
+                elemScroll.push({ id: elem.id, scroll: elem.offsetTop - elem.scrollTop + elem.clientTop, grow: grow });
+            }
+
+            setScrollItems(elemScroll);
+        } else {
+            setOriginalOffsetHeight(Array.from(elems).map(elem => elem.offsetHeight));
+            setScroll(scroll + 1);
+            
+            setTimeout(() => {
+                document.getElementById('welcome').classList.remove('d-none');
+            }, 100);
+        }
     }, [scroll]);
 
     function getGrow(id) {
         var item = scrollItems.find(si => si.id == id);
-        // console.log(item);
-
-        // if (item && !item.scroll) {
-        //     item = document.getElementById(id);
-        //     console.log(item);
-        //     item = { scroll: item.offsetTop - item.scrollTop + item.clientTop };
-        // }
-
-        // console.log(scroll + ': ' + (item ? item.scroll : 0));
+        
         return item && item.grow;
     }
 
@@ -96,11 +121,15 @@ export default function TitlebarGridList() {
     return (
         <div className={classes.root}>
             <Box
-                display="flex"
-                alignItems="center"
+                display='flex'
+                alignItems='center'
                 css={{ height: 'calc(100vh + 53px)' }}
                 className={classes.welcome}>
-                <Typography variant="h1" component="h2">
+                <Typography 
+                    id={'welcome'} 
+                    variant="h1"
+                    component="h2"
+                    className="d-none">
                     Hola
                 </Typography>
             </Box>
