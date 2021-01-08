@@ -1,25 +1,37 @@
-import logo from "./logo.svg";
-import "./App.css";
+import Header from "components/header";
+import Projects from "components/projects";
+import React, { Component, Fragment } from "react";
+import LocalizedStrings from "react-localization";
+import localization from "./assets/data/strings.json";
+import "./styles/App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+let strings = new LocalizedStrings(localization);
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      language: "es",
+    };
+  }
+
+  handleLanguageChange = (lang) => {
+    this.setState({ language: lang });
+  };
+
+  render() {
+    strings.setLanguage(this.state.language);
+    console.log(localization);
+    return (
+      <Fragment>
+        <Header
+          language={this.state.language}
+          onChangeLanguage={this.handleLanguageChange}
+        />
+        <Projects strings={strings} />
+      </Fragment>
+    );
+  }
 }
 
 export default App;
