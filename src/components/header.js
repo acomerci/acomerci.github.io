@@ -1,33 +1,91 @@
-import { AppBar, Button, MenuItem, Select, Toolbar } from "@material-ui/core";
-import React, { Component, Fragment } from "react";
+import {
+  AppBar,
+  Button,
+  makeStyles,
+  Menu,
+  MenuItem,
+  Toolbar,
+} from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import LanguageIcon from "@material-ui/icons/Translate";
+import React from "react";
 import { Link } from "react-scroll";
+import { LANGUAGES_LABEL } from "../constants";
 
-class Header extends Component {
-  handleChangeLanguage = (event) => {
-    this.props.onChangeLanguage(event.target.value);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  separator: {
+    flexGrow: 1,
+  },
+}));
+
+export default function Header(props) {
+  const { strings } = props;
+  const classes = useStyles();
+
+  const [languageMenu, setLanguageMenu] = React.useState(null);
+
+  const handleLanguageIconClick = (event) => {
+    setLanguageMenu(event.currentTarget);
   };
 
-  render() {
-    return (
-      <Fragment>
-        <AppBar position="fixed">
-          <Toolbar>
-            <Link to="projects" spy={true} smooth={true}>
-              <Button color="inherit">Proyectos</Button>
-            </Link>
-            <Select
-              value={this.props.language}
-              onChange={this.handleChangeLanguage}
-              inputProps={{ "aria-label": "Without label" }}
-            >
-              <MenuItem value="en">English</MenuItem>
-              <MenuItem value="es">Español</MenuItem>
-            </Select>
-          </Toolbar>
-        </AppBar>
-      </Fragment>
-    );
-  }
-}
+  const handleLanguageMenuClose = (event) => {
+    if (event.currentTarget.nodeName === "A")
+      props.onChangeLanguage(event.currentTarget.lang);
 
-export default Header;
+    setLanguageMenu(null);
+  };
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Link to="projects" spy={true} smooth={true}>
+            <Button color="inherit">{strings.projects}</Button>
+          </Link>
+          <div className={classes.separator} />
+          <Button
+            color="inherit"
+            aria-owns={languageMenu ? "language-menu" : undefined}
+            aria-haspopup="true"
+            onClick={handleLanguageIconClick}
+            data-ga-event-category="header"
+            data-ga-event-action="language"
+          >
+            <LanguageIcon />
+            <span className={classes.language}>
+              {
+                LANGUAGES_LABEL.filter(
+                  (language) => language.code === props.userLanguage
+                )[0].text
+              }
+            </span>
+            <ExpandMoreIcon fontSize="small" />
+          </Button>
+          <Menu
+            id="language-menu"
+            anchorEl={languageMenu}
+            open={Boolean(languageMenu)}
+            onClose={handleLanguageMenuClose}
+          >
+            {LANGUAGES_LABEL.map((language) => (
+              <MenuItem
+                component="a"
+                data-no-link="true"
+                key={language.code}
+                selected={props.language === language.code}
+                onClick={handleLanguageMenuClose}
+                lang={language.code}
+                hrefLang={language.code}
+              >
+                {language.text}
+              </MenuItem>
+            ))}
+          </Menu>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+}

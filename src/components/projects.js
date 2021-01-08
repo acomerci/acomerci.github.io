@@ -9,7 +9,7 @@ class Projects extends Component {
     return (
       <Container id="projects">
         <h1>{strings.projects}</h1>
-        <p>Participé en estos proyectos.</p>
+        <p>{strings.projectsDesc}</p>
         <Grid container spacing={5}>
           {projects.map((project, index) => (
             <Project key={index} project={project} />

@@ -10,22 +10,34 @@ let strings = new LocalizedStrings(localization);
 class App extends Component {
   constructor(props) {
     super(props);
+    this.getLanguage();
     this.state = {
-      language: "es",
+      userLanguage: this.getLanguage(),
     };
   }
 
+  getLanguage = () => {
+    let lang = (
+      localStorage.getItem("userLanguage") ||
+      navigator.language ||
+      navigator.userLanguage ||
+      "es"
+    ).substring(0, 2);
+    return localization.hasOwnProperty(lang) ? lang : "es";
+  };
+
   handleLanguageChange = (lang) => {
-    this.setState({ language: lang });
+    localStorage.setItem("userLanguage", lang);
+    this.setState({ userLanguage: lang });
   };
 
   render() {
-    strings.setLanguage(this.state.language);
-    console.log(localization);
+    strings.setLanguage(this.state.userLanguage);
     return (
       <Fragment>
         <Header
-          language={this.state.language}
+          strings={strings}
+          userLanguage={this.state.userLanguage}
           onChangeLanguage={this.handleLanguageChange}
         />
         <Projects strings={strings} />

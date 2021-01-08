@@ -1,8 +1,10 @@
 {
   "en": {
-    "projects": "Projects"
+    "projects": "Projects",
+    "projectsDesc": "I participated in these projects."
   },
   "es": {
-    "projects": "Projectos"
+    "projects": "Projectos",
+    "projectsDesc": "Participé en estos proyectos."
   }
 }
