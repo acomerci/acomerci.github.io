@@ -1,11 +1,11 @@
 const LANGUAGES_LABEL = [
   {
-    code: "en",
-    text: "English",
+    code: 'en',
+    text: 'English',
   },
   {
-    code: "es",
-    text: "Español",
+    code: 'es',
+    text: 'Español',
   },
 ];
 
