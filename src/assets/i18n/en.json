@@ -1,4 +1,6 @@
 {
+  "intro_title": "Introduction",
+  "intro_description": "Hi, my name is Alexis, I live in Autonomous City of Buenos Aires, Argentina.\nI am a fullstack developer with {expYears} years experience making web applications, mainly with Java and Angular with PrimeNG.",
   "projects_title": "Projects",
   "projects_description": "I participated in these projects."
 }

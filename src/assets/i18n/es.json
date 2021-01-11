@@ -1,4 +1,6 @@
 {
+  "intro_title": "Presentación",
+  "intro_description": "Hola, me llamo Alexis, vivo en Ciudad Autónoma de Buenos Aires, Argentina.\nSoy desarrollador fullstack con {expYears} años de experiencia haciendo aplicaciones web, principalmente con Java y Angular con PrimeNG.",
   "projects_title": "Projectos",
   "projects_description": "Participé en estos proyectos."
 }

@@ -1,9 +1,10 @@
-import Header from 'components/header';
-import Projects from 'components/projects';
-import React, { Component, Fragment } from 'react';
-import { LANGUAGES_LABEL } from 'utils/constants';
-import Locale from 'utils/localization';
-import './styles/App.css';
+import Header from "components/header";
+import Intro from "components/intro";
+import Projects from "components/projects";
+import React, { Component, Fragment } from "react";
+import { LANGUAGES_LABEL } from "utils/constants";
+import Locale from "utils/localization";
+import "./styles/App.css";
 
 class App extends Component {
   constructor(props) {
@@ -16,15 +17,15 @@ class App extends Component {
 
   getLanguage = () => {
     let lang = (
-      localStorage.getItem('userLanguage') ||
+      localStorage.getItem("userLanguage") ||
       navigator.language ||
-      'es'
+      "es"
     ).substring(0, 2);
-    return LANGUAGES_LABEL.find((x) => x.code === lang) ? lang : 'es';
+    return LANGUAGES_LABEL.find((x) => x.code === lang) ? lang : "es";
   };
 
   handleLanguageChange = (lang) => {
-    localStorage.setItem('userLanguage', lang);
+    localStorage.setItem("userLanguage", lang);
     this.setState({ userLanguage: lang });
   };
 
@@ -37,6 +38,7 @@ class App extends Component {
           userLanguage={this.state.userLanguage}
           onChangeLanguage={this.handleLanguageChange}
         />
+        <Intro />
         <Projects />
       </Fragment>
     );

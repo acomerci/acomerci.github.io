@@ -21,7 +21,6 @@ class Project extends Component {
           </CardActionArea>
           <CardContent>{this.proj.title}</CardContent>
         </Card>
-        {/* <img src={imgSrc} alt={this.proj.title} className="projectImg" /> */}
       </Grid>
     );
   }
