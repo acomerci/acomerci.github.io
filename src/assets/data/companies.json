@@ -1,0 +1,62 @@
+[
+  {
+    "img": "bbva.png",
+    "alt": "BBVA",
+    "md": 3
+  },
+  {
+    "img": "cmf.png",
+    "alt": "CMF",
+    "md": 2
+  },
+  {
+    "img": "gefco.png",
+    "alt": "Gefco",
+    "md": 2
+  },
+  {
+    "img": "amtae.png",
+    "alt": "Amtae",
+    "md": 2
+  },
+  {
+    "img": "ford.jpg",
+    "alt": "Ford",
+    "md": 3
+  },
+  {
+    "img": "superdigital.png",
+    "alt": "Superdigital",
+    "md": 3
+  },
+  {
+    "img": "stefanini.png",
+    "alt": "Stefanini",
+    "md": 3
+  },
+  {
+    "img": "crjp.png",
+    "alt": "CRJP",
+    "md": 3
+  },
+  {
+    "img": "laEstrella.png",
+    "alt": "La Estrella Retiro",
+    "md": 3
+  },
+  {
+    "img": "montepio.png",
+    "alt": "Montepío Luz Saviñón",
+    "md": 3
+  },
+  {
+    "img": "hartter.png",
+    "alt": "Hartter",
+    "md": 2
+  },
+  {
+    "img": "2innovate.png",
+    "alt": "2innovate",
+    "md": 3
+  }
+]

@@ -1,3 +1,5 @@
+import Companies from "components/companies";
+import Footer from "components/footer";
 import Header from "components/header";
 import Intro from "components/intro";
 import Projects from "components/projects";
@@ -40,6 +42,8 @@ class App extends Component {
         />
         <Intro />
         <Projects />
+        <Companies />
+        <Footer />
       </Fragment>
     );
   }

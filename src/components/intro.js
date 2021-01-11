@@ -1,4 +1,4 @@
-import { Container, makeStyles } from "@material-ui/core";
+import { Box, Container, makeStyles } from "@material-ui/core";
 import moment from "moment";
 import React from "react";
 import Locale from "utils/localization";
@@ -17,13 +17,15 @@ export default function Intro(props) {
   };
 
   return (
-    <Container id="intro">
-      <h1>{Locale.intro_title}</h1>
-      <p className={classes.desc}>
-        {Locale.formatString(Locale.intro_description, {
-          expYears: getYears(),
-        })}
-      </p>
-    </Container>
+    <Box id="intro" py="25px">
+      <Container>
+        <h1>{Locale.intro_title}</h1>
+        <p className={classes.desc}>
+          {Locale.formatString(Locale.intro_description, {
+            expYears: getYears(),
+          })}
+        </p>
+      </Container>
+    </Box>
   );
 }
