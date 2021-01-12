@@ -1,19 +1,11 @@
-import {
-  Box,
-  Container,
-  Grid,
-  Slide,
-  useScrollTrigger,
-} from "@material-ui/core";
+import { Box, Container, Grid } from "@material-ui/core";
 import React from "react";
 import Locale from "utils/localization";
 import companies from "../assets/data/companies.json";
 import Company from "./company";
 
 export default function Companies() {
-  const trigger = useScrollTrigger();
   return (
-    // <Slide direction="right" in={trigger}>
     <Box id="companies" pt="25px" pb="150px">
       <Container>
         <h1>{Locale.companies_title}</h1>
@@ -31,6 +23,5 @@ export default function Companies() {
         </Box>
       </Container>
     </Box>
-    // </Slide>
   );
 }
