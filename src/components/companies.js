@@ -11,11 +11,13 @@ class Companies extends Component {
         <Container>
           <h1>{Locale.companies_title}</h1>
           <p>{Locale.companies_description}</p>
-          <Grid container spacing={5}>
-            {companies.map((company, index) => (
-              <Company key={index} company={company} />
-            ))}
-          </Grid>
+          <Box pt="20px">
+            <Grid container spacing={10}>
+              {companies.map((company, index) => (
+                <Company key={index} company={company} />
+              ))}
+            </Grid>
+          </Box>
         </Container>
       </Box>
     );

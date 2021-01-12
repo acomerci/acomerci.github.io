@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer(props) {
   return (
-    <Box bgcolor="primary.main" color="primary.contrastText" py="250px">
+    <Box bgcolor="primary.main" color="primary.contrastText" py="50px">
       <Container>Soy un footer</Container>
     </Box>
   );
