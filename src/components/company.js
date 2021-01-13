@@ -1,10 +1,4 @@
-import {
-  Grid,
-  makeStyles,
-  Slide,
-  useScrollTrigger,
-  Zoom,
-} from "@material-ui/core";
+import { Grid, makeStyles, useScrollTrigger, Zoom } from "@material-ui/core";
 import React from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,9 +13,8 @@ export default function Company(props) {
   const classes = useStyles();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 800,
+    threshold: 300,
   });
-  console.log(trigger);
 
   return (
     <Zoom in={trigger} style={{ transitionDelay: props.delay }}>

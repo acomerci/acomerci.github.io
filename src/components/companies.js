@@ -1,12 +1,13 @@
 import { Box, Container, Grid } from "@material-ui/core";
 import React from "react";
+import { SECTION_PADDING_Y } from "utils/constants";
 import Locale from "utils/localization";
 import companies from "../assets/data/companies.json";
 import Company from "./company";
 
 export default function Companies() {
   return (
-    <Box id="companies" pt="25px" pb="150px">
+    <Box id="companies" py={SECTION_PADDING_Y}>
       <Container>
         <h1>{Locale.companies_title}</h1>
         <p>{Locale.companies_description}</p>

@@ -1,22 +1,27 @@
 [
   {
     "title": "Valija digital",
-    "img": "pagosSuc.png"
+    "client": "BBVA",
+    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
   },
   {
     "title": "Pagos en sucursal",
-    "img": "pagosSuc.png"
+    "client": "BBVA",
+    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
   },
   {
     "title": "CCO",
-    "img": "cco.png"
+    "client": "BBVA",
+    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
   },
   {
     "title": "Rendición de gastos",
-    "img": "pagosSuc.png"
+    "client": "BBVA",
+    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
   },
   {
     "title": "Remote deposit",
-    "img": "pagosSuc.png"
+    "client": "Banco CMF",
+    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
   }
 ]

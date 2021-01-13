@@ -1,29 +1,33 @@
 import {
   Card,
-  CardActionArea,
   CardContent,
-  CardMedia,
+  CardHeader,
   Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
 } from "@material-ui/core";
-import React, { Component } from "react";
+import React from "react";
 
-class Project extends Component {
-  proj = this.props.project;
+export default function Project(props) {
+  const proj = props.project;
 
-  render() {
-    const imgSrc = require(`../assets/img/${this.proj.img}`).default;
-
-    return (
-      <Grid item xs={12} md={4}>
-        <Card>
-          <CardActionArea>
-            <CardMedia component="img" className="projectImg" image={imgSrc} />
-          </CardActionArea>
-          <CardContent>{this.proj.title}</CardContent>
-        </Card>
-      </Grid>
-    );
-  }
+  return (
+    <Grid item xs={12} md={4}>
+      <Card>
+        <CardContent>
+          <p>{proj.title}</p>
+          <p>{proj.client}</p>
+          <List disablePadding>
+            {proj.technologies.map((tec, index) => (
+              <ListItem key={index}>
+                <ListItemText primary={tec} />
+              </ListItem>
+            ))}
+          </List>
+        </CardContent>
+      </Card>
+    </Grid>
+  );
 }
-
-export default Project;

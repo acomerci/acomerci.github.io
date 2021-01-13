@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header(props) {
-  const offset = -65;
+  const offset = -64;
   const classes = useStyles();
   const [languageMenu, setLanguageMenu] = React.useState(null);
 
@@ -45,7 +45,7 @@ export default function Header(props) {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar>
-          <Link to="intro" spy={true} smooth={true} offset={-65}>
+          <Link to="intro" spy={true} smooth={true} offset={offset}>
             <Button color="inherit">{Locale.intro_title}</Button>
           </Link>
           <Link to="projects" spy={true} smooth={true} offset={offset}>
