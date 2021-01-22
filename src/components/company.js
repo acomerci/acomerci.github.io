@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Company(props) {
   const company = props.company;
-  const imgSrc = require(`../assets/img/${company.img}`).default;
+  const imgSrc = require(`../assets/img/companies/${company.img}`).default;
   const classes = useStyles();
   const trigger = useScrollTrigger({
     disableHysteresis: true,

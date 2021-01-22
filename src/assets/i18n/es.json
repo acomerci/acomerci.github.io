@@ -3,6 +3,9 @@
   "intro_description": "Hola, me llamo Alexis, vivo en Ciudad Autónoma de Buenos Aires, Argentina.\nSoy desarrollador fullstack con {expYears} años de experiencia haciendo aplicaciones web, principalmente con Java y Angular.",
   "projects_title": "Projectos",
   "projects_description": "Algunos de los proyectos en los que participé:",
+  "projects_show_all_tecs": "Mostrar todas las tecnologías",
+  "project_backend": "Backend",
+  "project_frontend": "Frontend",
   "companies_title": "Empresas",
   "companies_description": "Colaboré con estas empresas:"
 }

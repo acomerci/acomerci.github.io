@@ -1,0 +1,22 @@
+{
+  "java": {
+    "name": "Java",
+    "img": "java.jpg"
+  },
+  "spring_mvc": {
+    "name": "Spring MVC",
+    "img": "spring.png"
+  },
+  "oracle": {
+    "name": "Oracle",
+    "img": "oracle.png"
+  },
+  "bootstrap": {
+    "name": "Bootstrap",
+    "img": "bootstrap.png"
+  },
+  "jquery": {
+    "name": "jQuery",
+    "img": "jquery.gif"
+  }
+}

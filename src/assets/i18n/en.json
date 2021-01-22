@@ -3,6 +3,9 @@
   "intro_description": "Hi, my name is Alexis, I live in Autonomous City of Buenos Aires, Argentina.\nI am a fullstack developer with {expYears} years experience making web applications, mainly with Java and Angular.",
   "projects_title": "Projects",
   "projects_description": "Some of the projects I have participated:",
+  "projects_show_all_tecs": "Show all technologies",
+  "project_backend": "Backend",
+  "project_frontend": "Frontend",
   "companies_title": "Companies",
   "companies_description": "I collaborated with this companies:"
 }

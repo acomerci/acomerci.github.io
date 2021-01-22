@@ -1,27 +1,31 @@
 [
   {
     "title": "Valija digital",
-    "client": "BBVA",
-    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
-  },
-  {
-    "title": "Pagos en sucursal",
-    "client": "BBVA",
-    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
-  },
-  {
-    "title": "CCO",
-    "client": "BBVA",
-    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
-  },
-  {
-    "title": "Rendición de gastos",
-    "client": "BBVA",
-    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
-  },
-  {
-    "title": "Remote deposit",
-    "client": "Banco CMF",
-    "technologies": ["Java 1.8", "Spring MVC", "Oracle"]
+    "description": {
+      "es": "Una bosta para mandar documentos.",
+      "en": "Some shit to send documents."
+    },
+    "work": { "es": ["El trabajo de Marco"], "en": ["Marco's work"] },
+    "technologies": {
+      "be": [
+        { "id": "java", "version": "8", "important": true },
+        { "id": "spring_mvc", "version": "4.3", "important": true },
+        { "id": "oracle", "version": "10.2", "important": true },
+        { "name": "Spring Security", "version": "4.1" },
+        { "name": "Log4j", "version": "1.2" },
+        { "name": "Jackson", "version": "1.9" }
+      ],
+      "fe": [
+        { "id": "bootstrap", "version": "3.3", "important": true },
+        { "id": "jquery", "version": "3.2", "important": true },
+        { "name": "Material Dashboard", "version": "1.2" },
+        { "name": "DataTable", "version": "1.10" },
+        { "name": "Moment", "version": "2.14" },
+        { "name": "Select2", "version": "4.0" },
+        { "name": "File Saver", "version": "1.1" },
+        { "name": "Sweet Alert 2", "version": "5.3" },
+        { "name": "Font Awesome", "version": "4.7" }
+      ]
+    }
   }
 ]
