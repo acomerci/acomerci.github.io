@@ -11,6 +11,14 @@
     "name": "Oracle",
     "img": "oracle.png"
   },
+  "hibernate": {
+    "name": "Hibernate",
+    "img": "hibernate.png"
+  },
+  "maven": {
+    "name": "Maven",
+    "img": "maven.png"
+  },
   "bootstrap": {
     "name": "Bootstrap",
     "img": "bootstrap.png"
@@ -18,5 +26,13 @@
   "jquery": {
     "name": "jQuery",
     "img": "jquery.gif"
+  },
+  "angular": {
+    "name": "Agular",
+    "img": "angular.png"
+  },
+  "primeng": {
+    "name": "PrimeNG",
+    "img": "primeng.png"
   }
 }

@@ -28,13 +28,10 @@ export default function ProjectTecList(props) {
 
   return (
     <Fragment>
+      <Typography variant="body2" className={classes.title}>
+        {props.title}
+      </Typography>
       <List dense>
-        <ListItem disableGutters>
-          <ListItemText
-            primary={props.title}
-            classes={{ primary: classes.title }}
-          />
-        </ListItem>
         {tecs
           .filter((x) => x.important)
           .map((tec, index) => (
