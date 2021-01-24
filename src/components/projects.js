@@ -44,11 +44,17 @@ export default function Projects() {
           }
           label={Locale.projects_show_all_tecs}
         />
-        <Grid container spacing={5}>
-          {projects.map((project, index) => (
-            <Project key={index} project={project} showAllTecs={showAllTecs} />
-          ))}
-        </Grid>
+        <Box pt="20px">
+          <Grid container spacing={5}>
+            {projects.map((project, index) => (
+              <Project
+                key={index}
+                project={project}
+                showAllTecs={showAllTecs}
+              />
+            ))}
+          </Grid>
+        </Box>
       </Container>
     </Box>
   );

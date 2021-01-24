@@ -1,17 +1,31 @@
-import { Card, CardContent, Grid } from "@material-ui/core";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
 import Locale from "utils/localization";
 import ProjectTecList from "./project_tec_list";
 
+const useStyles = makeStyles((theme) => ({
+  header: {
+    paddingBottom: 0,
+  },
+}));
+
 export default function Project(props) {
+  const classes = useStyles();
   const proj = props.project;
 
   return (
     <Grid item xs={12} md={4}>
       <Card>
+        <CardHeader title={proj.title} className={classes.header} />
         <CardContent>
-          <p>{proj.title}</p>
-          <p>{proj.description[Locale.getLanguage()]}</p>
+          <Typography>{proj.description[Locale.getLanguage()]}</Typography>
           <ProjectTecList
             title={Locale.project_backend}
             tecs={proj.technologies.be}

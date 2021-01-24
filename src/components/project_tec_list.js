@@ -28,7 +28,7 @@ export default function ProjectTecList(props) {
 
   return (
     <Fragment>
-      <List disablePadding dense>
+      <List dense>
         <ListItem disableGutters>
           <ListItemText
             primary={props.title}

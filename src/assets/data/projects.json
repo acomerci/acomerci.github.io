@@ -2,8 +2,8 @@
   {
     "title": "Valija digital",
     "description": {
-      "es": "Una bosta para mandar documentos.",
-      "en": "Some shit to send documents."
+      "es": "Una app para mandar documentos.",
+      "en": "An app to send documents."
     },
     "work": { "es": ["El trabajo de Marco"], "en": ["Marco's work"] },
     "technologies": {
