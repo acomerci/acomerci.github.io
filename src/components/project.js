@@ -52,8 +52,8 @@ export default function Project(props) {
         ref={cardContent}
       >
         <CardHeader title={proj.title} className={classes.header} />
-        {!hover && <ProjectCardContentFront proj={proj} />}
-        {hover && <ProjectCardContentBack proj={proj} />}
+        {!hover && <ProjectCardContentFront props={props} />}
+        {hover && <ProjectCardContentBack props={props} />}
       </Card>
     </Grid>
   );
@@ -68,7 +68,9 @@ export default function Project(props) {
 }
 
 function ProjectCardContentFront(props) {
-  const proj = props.proj;
+  props = props.props;
+  const proj = props.project;
+
   return (
     <CardContent>
       <ProjectTecList
@@ -86,8 +88,10 @@ function ProjectCardContentFront(props) {
 }
 
 function ProjectCardContentBack(props) {
+  props = props.props;
   const classes = useStyles();
-  const proj = props.proj;
+  const proj = props.project;
+
   return (
     <CardContent>
       <Typography variant="body2" className={classes.title}>
