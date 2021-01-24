@@ -3,13 +3,12 @@ import {
   Card,
   CardContent,
   CardHeader,
-  createMuiTheme,
   Grid,
   makeStyles,
-  ThemeProvider,
   Typography,
 } from "@material-ui/core";
-import React, { Fragment, useCallback } from "react";
+import React, { useCallback } from "react";
+import { isMobile } from "react-device-detect";
 import Locale from "utils/localization";
 import ProjectTecList from "./project_tec_list";
 
@@ -34,12 +33,18 @@ export default function Project(props) {
   }, []);
 
   const onMouseEnter = () => {
+    if (isMobile) return;
     if (contentRef) setHeight(contentRef.getBoundingClientRect().height);
     setHover(true);
   };
 
   const onMouseLeave = () => {
+    if (isMobile) return;
     setHover(false);
+  };
+
+  const onClick = () => {
+    setHover(!hover);
   };
 
   return (
@@ -47,24 +52,26 @@ export default function Project(props) {
       <Card
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        style={cardStyle()}
+        onClick={onClick}
+        style={{
+          height: hover ? height : null,
+          backgroundColor: hover ? "inherit" : "white",
+          color: hover ? "white" : "black",
+          cursor: "pointer",
+          userSelect: "none",
+        }}
         raised={hover ? true : false}
         ref={cardContent}
       >
-        <CardHeader title={proj.title} className={classes.header} />
+        <CardHeader
+          title={proj.title[Locale.getLanguage()]}
+          className={classes.header}
+        />
         {!hover && <ProjectCardContentFront props={props} />}
         {hover && <ProjectCardContentBack props={props} />}
       </Card>
     </Grid>
   );
-
-  function cardStyle() {
-    return {
-      height: hover ? height : null,
-      backgroundColor: hover ? "inherit" : "white",
-      color: hover ? "white" : "black",
-    };
-  }
 }
 
 function ProjectCardContentFront(props) {
@@ -73,16 +80,20 @@ function ProjectCardContentFront(props) {
 
   return (
     <CardContent>
-      <ProjectTecList
-        title={Locale.project_backend}
-        tecs={proj.technologies.be}
-        showAllTecs={props.showAllTecs}
-      />
-      <ProjectTecList
-        title={Locale.project_frontend}
-        tecs={proj.technologies.fe}
-        showAllTecs={props.showAllTecs}
-      />
+      {proj.technologies.be && (
+        <ProjectTecList
+          title={Locale.project_backend}
+          tecs={proj.technologies.be}
+          showAllTecs={props.showAllTecs}
+        />
+      )}
+      {proj.technologies.fe && (
+        <ProjectTecList
+          title={Locale.project_frontend}
+          tecs={proj.technologies.fe}
+          showAllTecs={props.showAllTecs}
+        />
+      )}
     </CardContent>
   );
 }

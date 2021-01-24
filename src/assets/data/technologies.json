@@ -34,5 +34,13 @@
   "primeng": {
     "name": "PrimeNG",
     "img": "primeng.png"
+  },
+  "react": {
+    "name": "React",
+    "img": "react.png"
+  },
+  "material": {
+    "name": "Material UI",
+    "img": "material.png"
   }
 }

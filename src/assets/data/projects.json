@@ -1,6 +1,9 @@
 [
   {
-    "title": "Valija digital",
+    "title": {
+      "es": "Valija digital",
+      "en": "Digital bag"
+    },
     "description": {
       "es": "Es una aplicación web para enviar documentación de trámites entre sectores de la empresa.",
       "en": "It's a webapp to send documentation of administrative procedures between company sectors."
@@ -29,7 +32,10 @@
     }
   },
   {
-    "title": "Pagos en sucursal",
+    "title": {
+      "es": "Pagos en sucursal",
+      "en": "Branch payments"
+    },
     "description": {
       "es": "TBD",
       "en": "TBD"
@@ -48,6 +54,27 @@
       "fe": [
         { "id": "angular", "version": "5.2", "important": true },
         { "id": "primeng", "version": "5.2", "important": true }
+      ]
+    }
+  },
+  {
+    "title": {
+      "es": "Esta página",
+      "en": "This page"
+    },
+    "description": {
+      "es": "La página que estás viendo ahora.",
+      "en": "The page you are currently seeing."
+    },
+    "work": { "es": ["Todo."], "en": ["Everything."] },
+    "technologies": {
+      "fe": [
+        { "id": "react", "version": "17.0", "important": true },
+        { "id": "material", "version": "4.11", "important": true },
+        { "name": "React Localization", "version": "1.0" },
+        { "name": "React Scroll", "version": "1.8" },
+        { "name": "React Device Detect", "version": "1.15" },
+        { "name": "Moment", "version": "2.29" }
       ]
     }
   }
