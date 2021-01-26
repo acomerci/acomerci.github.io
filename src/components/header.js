@@ -1,24 +1,38 @@
 import {
   AppBar,
   Button,
+  Hidden,
   makeStyles,
   Menu,
   MenuItem,
   Toolbar,
 } from "@material-ui/core";
+import { Business, EmojiPeople, Work } from "@material-ui/icons";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LanguageIcon from "@material-ui/icons/Translate";
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-scroll";
 import { LANGUAGES_LABEL } from "utils/constants";
 import Locale from "utils/localization";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    display: "flex",
   },
   separator: {
-    flexGrow: 1,
+    flex: 1,
+  },
+  linkButton: {
+    minHeight: "65px",
+  },
+  linkIcon: {
+    flex: 1,
+    textAlign: "center",
+    cursor: "pointer",
+    verticalAlign: "center",
+  },
+  icon: {
+    minHeight: "50px",
   },
   langButton: {
     paddingLeft: 5,
@@ -26,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header(props) {
-  const offset = -64;
   const classes = useStyles();
   const [languageMenu, setLanguageMenu] = React.useState(null);
 
@@ -43,17 +56,23 @@ export default function Header(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar>
         <Toolbar>
-          <Link to="intro" spy={true} smooth={true} offset={offset}>
-            <Button color="inherit">{Locale.intro_title}</Button>
-          </Link>
-          <Link to="projects" spy={true} smooth={true} offset={offset}>
-            <Button color="inherit">{Locale.projects_title}</Button>
-          </Link>
-          <Link to="companies" spy={true} smooth={true} offset={offset}>
-            <Button color="inherit">{Locale.companies_title}</Button>
-          </Link>
+          <HeaderLink
+            to="intro"
+            title={Locale.intro_title}
+            icon={<EmojiPeople className={classes.icon} />}
+          />
+          <HeaderLink
+            to="projects"
+            title={Locale.projects_title}
+            icon={<Work className={classes.icon} />}
+          />
+          <HeaderLink
+            to="companies"
+            title={Locale.companies_title}
+            icon={<Business className={classes.icon} />}
+          />
           <div className={classes.separator} />
           <Button
             color="inherit"
@@ -64,13 +83,18 @@ export default function Header(props) {
             data-ga-event-action="language"
           >
             <LanguageIcon />
-            <span className={classes.langButton}>
-              {
-                LANGUAGES_LABEL.filter(
-                  (language) => language.code === props.userLanguage
-                )[0].text
-              }
-            </span>
+            <Hidden only="xs">
+              <span className={classes.langButton}>
+                {
+                  LANGUAGES_LABEL.filter(
+                    (language) => language.code === props.userLanguage
+                  )[0].text
+                }
+              </span>
+            </Hidden>
+            <Hidden smUp>
+              <span className={classes.langButton}>{props.userLanguage}</span>
+            </Hidden>
             <ExpandMoreIcon fontSize="small" />
           </Button>
           <Menu
@@ -97,5 +121,32 @@ export default function Header(props) {
       </AppBar>
       <Toolbar />
     </div>
+  );
+}
+
+function HeaderLink(props) {
+  const classes = useStyles();
+
+  return (
+    <Fragment>
+      <Hidden only="xs">
+        <Link to={props.to} spy={true} smooth={true} offset={-66}>
+          <Button color="inherit" className={classes.linkButton}>
+            {props.title}
+          </Button>
+        </Link>
+      </Hidden>
+      <Hidden smUp>
+        <Link
+          to={props.to}
+          spy={true}
+          smooth={true}
+          offset={-56}
+          className={classes.linkIcon}
+        >
+          {props.icon}
+        </Link>
+      </Hidden>
+    </Fragment>
   );
 }
