@@ -35,6 +35,14 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "50px",
   },
   langButton: {
+    [theme.breakpoints.only("xs")]: {
+      minHeight: "50px",
+    },
+    [theme.breakpoints.up("sm")]: {
+      minHeight: "65px",
+    },
+  },
+  langText: {
     paddingLeft: 5,
   },
 }));
@@ -81,10 +89,11 @@ export default function Header(props) {
             onClick={handleLanguageIconClick}
             data-ga-event-category="header"
             data-ga-event-action="language"
+            className={classes.langButton}
           >
             <LanguageIcon />
             <Hidden only="xs">
-              <span className={classes.langButton}>
+              <span className={classes.langText}>
                 {
                   LANGUAGES_LABEL.filter(
                     (language) => language.code === props.userLanguage
@@ -93,7 +102,7 @@ export default function Header(props) {
               </span>
             </Hidden>
             <Hidden smUp>
-              <span className={classes.langButton}>{props.userLanguage}</span>
+              <span className={classes.langText}>{props.userLanguage}</span>
             </Hidden>
             <ExpandMoreIcon fontSize="small" />
           </Button>
