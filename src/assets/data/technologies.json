@@ -1,7 +1,7 @@
 {
   "java": {
     "name": "Java",
-    "img": "java.jpg"
+    "img": "java.png"
   },
   "net_core": {
     "name": ".NET Core",
@@ -21,7 +21,7 @@
   },
   "sql_server": {
     "name": "SQL Server",
-    "img": "sql_server.jpg"
+    "img": "sql_server.png"
   },
   "hibernate": {
     "name": "Hibernate",

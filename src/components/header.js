@@ -7,6 +7,7 @@ import {
   MenuItem,
   Toolbar,
 } from "@material-ui/core";
+import { grey } from "@material-ui/core/colors";
 import { Business, EmojiPeople, Work } from "@material-ui/icons";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LanguageIcon from "@material-ui/icons/Translate";
@@ -16,8 +17,9 @@ import { LANGUAGES_LABEL } from "utils/constants";
 import Locale from "utils/localization";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  appBar: {
     display: "flex",
+    backgroundColor: "#000328",
   },
   separator: {
     flex: 1,
@@ -63,8 +65,8 @@ export default function Header(props) {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar>
+    <div>
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <HeaderLink
             to="intro"

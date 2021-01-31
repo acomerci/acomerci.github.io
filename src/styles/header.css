@@ -1,3 +1,13 @@
+header a {
+  background-image: linear-gradient(
+    to bottom,
+    #000328 50%,
+    rgba(0, 0, 255, 0.2) 50%
+  );
+  background-size: 100% 200%;
+  transition: background-position 0.3s;
+}
+
 header a.active {
-  border-bottom: 1px solid white;
+  background-position: 0 100%;
 }

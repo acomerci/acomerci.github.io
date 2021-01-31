@@ -7,7 +7,7 @@ export default function Footer(props) {
   return (
     <Box
       component="footer"
-      bgcolor="primary.main"
+      bgcolor="#000328"
       color="primary.contrastText"
       py={SECTION_PADDING_Y}
     >

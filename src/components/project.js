@@ -55,10 +55,11 @@ export default function Project(props) {
         onClick={onClick}
         style={{
           height: hover ? height : "100%",
-          backgroundColor: hover ? "inherit" : "white",
+          backgroundColor: hover ? "rgba(0, 0, 0, 0.5)" : "white",
           color: hover ? "white" : "black",
           cursor: "pointer",
           userSelect: "none",
+          transition: "background-color 0.2s linear",
         }}
         raised={hover ? true : false}
         ref={cardContent}

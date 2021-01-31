@@ -4,6 +4,7 @@ import {
   Container,
   FormControlLabel,
   Grid,
+  makeStyles,
   withStyles,
 } from "@material-ui/core";
 import React from "react";
@@ -22,13 +23,23 @@ const WhiteCheckbox = withStyles({
   checked: {},
 })((props) => <Checkbox color="default" {...props} />);
 
+const useStyles = makeStyles((theme) => ({
+  box: {
+    backgroundImage: `url(
+      ${require("../assets/img/projects_background.jpg").default}
+    )`,
+    backgroundSize: "cover",
+  },
+}));
+
 export default function Projects() {
+  const classes = useStyles();
   const [showAllTecs, setShowAllTecs] = React.useState(false);
 
   return (
     <Box
       id="projects"
-      bgcolor="primary.main"
+      className={classes.box}
       color="primary.contrastText"
       py={SECTION_PADDING_Y}
     >
