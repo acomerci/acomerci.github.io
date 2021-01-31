@@ -54,7 +54,7 @@ export default function Project(props) {
         onMouseLeave={onMouseLeave}
         onClick={onClick}
         style={{
-          height: hover ? height : null,
+          height: hover ? height : "100%",
           backgroundColor: hover ? "inherit" : "white",
           color: hover ? "white" : "black",
           cursor: "pointer",
@@ -80,20 +80,33 @@ function ProjectCardContentFront(props) {
 
   return (
     <CardContent>
-      {proj.technologies.be && (
-        <ProjectTecList
-          title={Locale.project_backend}
-          tecs={proj.technologies.be}
-          showAllTecs={props.showAllTecs}
-        />
-      )}
-      {proj.technologies.fe && (
-        <ProjectTecList
-          title={Locale.project_frontend}
-          tecs={proj.technologies.fe}
-          showAllTecs={props.showAllTecs}
-        />
-      )}
+      {proj.technologies.be &&
+        (props.showAllTecs ||
+          proj.technologies.be.filter((t) => t.important).length > 0) && (
+          <ProjectTecList
+            title={Locale.project_backend}
+            tecs={proj.technologies.be}
+            showAllTecs={props.showAllTecs}
+          />
+        )}
+      {proj.technologies.fe &&
+        (props.showAllTecs ||
+          proj.technologies.fe.filter((t) => t.important).length > 0) && (
+          <ProjectTecList
+            title={Locale.project_frontend}
+            tecs={proj.technologies.fe}
+            showAllTecs={props.showAllTecs}
+          />
+        )}
+      {proj.technologies.tools &&
+        (props.showAllTecs ||
+          proj.technologies.tools.filter((t) => t.important).length > 0) && (
+          <ProjectTecList
+            title={Locale.project_tools}
+            tecs={proj.technologies.tools}
+            showAllTecs={props.showAllTecs}
+          />
+        )}
     </CardContent>
   );
 }

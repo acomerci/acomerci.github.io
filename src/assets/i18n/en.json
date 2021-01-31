@@ -6,6 +6,9 @@
   "projects_show_all_tecs": "Show all technologies",
   "project_backend": "Backend",
   "project_frontend": "Frontend",
+  "project_tools": "Tools",
+  "project_description": "¿What is it about?",
+  "project_work_done": "¿What have I done?",
   "companies_title": "Companies",
   "companies_description": "I collaborated with this companies:"
 }

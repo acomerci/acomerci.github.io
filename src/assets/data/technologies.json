@@ -3,6 +3,14 @@
     "name": "Java",
     "img": "java.jpg"
   },
+  "net_core": {
+    "name": ".NET Core",
+    "img": "net_core.png"
+  },
+  "net_framework": {
+    "name": ".NET Framework",
+    "img": "net_framework.png"
+  },
   "spring_mvc": {
     "name": "Spring MVC",
     "img": "spring.png"
@@ -11,13 +19,13 @@
     "name": "Oracle",
     "img": "oracle.png"
   },
+  "sql_server": {
+    "name": "SQL Server",
+    "img": "sql_server.jpg"
+  },
   "hibernate": {
     "name": "Hibernate",
     "img": "hibernate.png"
-  },
-  "maven": {
-    "name": "Maven",
-    "img": "maven.png"
   },
   "bootstrap": {
     "name": "Bootstrap",
@@ -28,8 +36,16 @@
     "img": "jquery.gif"
   },
   "angular": {
-    "name": "Agular",
+    "name": "Angular",
     "img": "angular.png"
+  },
+  "jsf": {
+    "name": "JSF",
+    "img": "jsf.png"
+  },
+  "primefaces": {
+    "name": "PrimeFaces",
+    "img": "primefaces.png"
   },
   "primeng": {
     "name": "PrimeNG",
@@ -42,5 +58,17 @@
   "material": {
     "name": "Material UI",
     "img": "material.png"
+  },
+  "azure_devops": {
+    "name": "Azure DevOps",
+    "img": "azure_devops.png"
+  },
+  "maven": {
+    "name": "Maven",
+    "img": "maven.png"
+  },
+  "git": {
+    "name": "Git",
+    "img": "git.png"
   }
 }

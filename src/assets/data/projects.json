@@ -1,6 +1,27 @@
 [
   {
     "title": {
+      "es": "Plataforma global",
+      "en": "Global platform"
+    },
+    "description": {
+      "es": "TBD",
+      "en": "TBD"
+    },
+    "work": { "es": ["TBD"], "en": ["TBD"] },
+    "technologies": {
+      "be": [
+        { "id": "net_core", "version": "3.1", "important": true },
+        { "id": "sql_server", "version": "2019", "important": true }
+      ],
+      "tools": [
+        { "id": "azure_devops", "important": true },
+        { "id": "git", "important": true }
+      ]
+    }
+  },
+  {
+    "title": {
       "es": "Valija digital",
       "en": "Digital bag"
     },
@@ -28,7 +49,8 @@
         { "name": "File Saver", "version": "1.1" },
         { "name": "Sweet Alert 2", "version": "5.3" },
         { "name": "Font Awesome", "version": "4.7" }
-      ]
+      ],
+      "tools": [{ "id": "git" }]
     }
   },
   {
@@ -47,14 +69,74 @@
         { "id": "spring_mvc", "version": "4.3", "important": true },
         { "id": "oracle", "version": "TBD", "important": true },
         { "id": "hibernate", "version": "4.2", "important": true },
-        { "id": "maven", "version": "3.2", "important": true },
         { "name": "Log4j", "version": "1.2" },
         { "name": "Jackson", "version": "2.5" }
       ],
       "fe": [
         { "id": "angular", "version": "5.2", "important": true },
         { "id": "primeng", "version": "5.2", "important": true }
-      ]
+      ],
+      "tools": [{ "id": "maven" }, { "id": "git" }]
+    }
+  },
+  {
+    "title": {
+      "es": "Rendición de gastos",
+      "en": "Expense report"
+    },
+    "description": {
+      "es": "TBD",
+      "en": "TBD"
+    },
+    "work": { "es": ["TBD"], "en": ["TBD"] },
+    "technologies": {
+      "be": [{ "id": "java", "version": "6", "important": true }],
+      "fe": [{ "id": "jquery", "version": "3.3", "important": true }],
+      "tools": [{ "id": "git" }]
+    }
+  },
+  {
+    "title": {
+      "es": "Web Cheques",
+      "en": "Checks webpage"
+    },
+    "description": {
+      "es": "TBD",
+      "en": "TBD"
+    },
+    "work": { "es": ["TBD"], "en": ["TBD"] },
+    "technologies": {
+      "be": [
+        { "id": "java", "version": "7", "important": true },
+        { "id": "sql_server", "version": "2008", "important": true },
+        { "name": "Jackson", "version": "2.6" }
+      ],
+      "fe": [
+        { "id": "jsf", "version": "2.2", "important": true },
+        { "id": "primefaces", "version": "5.3", "important": true }
+      ],
+      "tools": [{ "id": "maven" }, { "id": "git" }]
+    }
+  },
+  {
+    "title": {
+      "es": "Web Préstamos",
+      "en": "Loans webpage"
+    },
+    "description": {
+      "es": "TBD",
+      "en": "TBD"
+    },
+    "work": { "es": ["TBD"], "en": ["TBD"] },
+    "technologies": {
+      "be": [
+        { "id": "net_framework", "version": "4.5", "important": true },
+        { "id": "sql_server", "version": "2008", "important": true },
+        { "name": "Razor", "version": "3.2" },
+        { "name": "Entity Framework", "version": "6.2" }
+      ],
+      "fe": [{ "id": "jquery", "version": "3.3", "important": true }],
+      "tools": [{ "id": "git", "important": true }]
     }
   },
   {
@@ -75,7 +157,8 @@
         { "name": "React Scroll", "version": "1.8" },
         { "name": "React Device Detect", "version": "1.15" },
         { "name": "Moment", "version": "2.29" }
-      ]
+      ],
+      "tools": [{ "id": "git" }]
     }
   }
 ]
