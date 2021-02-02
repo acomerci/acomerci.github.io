@@ -156,6 +156,7 @@
         { "name": "React Localization", "version": "1.0" },
         { "name": "React Scroll", "version": "1.8" },
         { "name": "React Device Detect", "version": "1.15" },
+        { "name": "React Parallax", "version": "3.1" },
         { "name": "Moment", "version": "2.29" }
       ],
       "tools": [{ "id": "git" }]
